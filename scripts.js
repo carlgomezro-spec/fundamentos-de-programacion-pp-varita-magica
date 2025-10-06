@@ -44,25 +44,46 @@ for (let seccion of secciones) {
 //3.1
 
 for (let image of images) {
-  image.addEventListener('mouseover',() => {
-  image.src = "./assets/abracadabra.gif"});
+
+  const originalSrc = image.src;
+
+  image.addEventListener('mouseover', () => {
+    image.src = "./assets/abracadabra.gif";
+  });
+
+  image.addEventListener('mouseout', () => {
+    image.src = originalSrc; // Volvemos a la original
+  });
 }
 
 //3.2
 
-for ( let parrafo of parrafos) {
-  parrafo.addEventListener('mouseover',() => {
-    parrafo.style.color = "#1e929dff"
-    parrafo.style.backgroundColor = "#c5e836ff"
-  })
+for (let parrafo of parrafos) {
+  const originalColor = parrafo.style.color;
+  const originalBackground = parrafo.style.backgroundColor;
+
+  parrafo.addEventListener('mouseover', () => {
+    parrafo.style.color = "#1e929dff";
+    parrafo.style.backgroundColor = "#c5e836ff";
+  });
+
+  parrafo.addEventListener('mouseout', () => {
+    parrafo.style.color = originalColor;
+    parrafo.style.backgroundColor = originalBackground;
+  });
 }
+
 
 //3.3
 
 for (let seccion of secciones) {
-  seccion.addEventListener('mouseover',() => {
-    seccion.style.backgroundColor = "#a11313ff"
-  })
+  seccion.addEventListener('mouseover', () => {
+    seccion.style.backgroundColor = "#a11313ff";
+  });
+
+  seccion.addEventListener('mouseout', () => {
+    seccion.style.backgroundColor = ""; // Vuelve al color CSS original
+  });
 }
 
 //BONUS EJERCICIO 4
