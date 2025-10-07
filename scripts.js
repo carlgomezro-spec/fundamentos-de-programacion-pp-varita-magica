@@ -25,8 +25,8 @@ const parrafos = document.querySelectorAll('p');
 
 for (let parrafo of parrafos) {
   parrafo.addEventListener('click',() => {
-    parrafo.style.color = "#a529a5ff"
-    parrafo.style.backgroundColor = "#5bea8fff"
+    parrafo.style.color = coloors[getRandom(coloors.length)]
+    parrafo.style.backgroundColor = coloors[getRandom(coloors.length)]
   });
 }
 
@@ -88,19 +88,17 @@ for (let seccion of secciones) {
 
 //BONUS EJERCICIO 4
 const colors = ['red', 'blue', 'green']
-function getRandom(array) {
-  if (!Array.isArray(array) || array.length === 0) {
-    throw new Error("Debes proporcionar un array con al menos un elemento.");
-  }
 
-  const randomIndex = Math.floor(Math.random() * array.length); // calculamos el índice aleatorio
-
-  for (const i in array) { // i es el índice como string
-    if (Number(i) === randomIndex) {
-      return array[i]; // devolvemos el elemento cuando coincide con el índice aleatorio
-    }
-  }
+function getRandom(arraylongi) {
+  const randomIndex = Math.floor(Math.random() * arraylongi)
+   // //Math.random genera un numero aleatorio entre 0 y 0,9999.. y lo multiplicamos por la longitud del array. Math floor, redondead a un numero entero por debajo.
+   // Así calculamos el índice aleatorio
+return randomIndex
 }
 
-console.log(getRandom(colors))
+console.log(colors[getRandom(colors.length)])
 
+// //BONUS EJERCICIO 5
+
+const coloors = ['#51A3A3', '#75485E','#CB904D','#DFCC74','#C3E991']
+coloors[getRandom(coloors.length)]
